@@ -1,0 +1,48 @@
+[versions]
+kotlin = "2.2.0"
+kotlinxDatetime = "0.6.1"
+kotlinxSerializationJSON = "1.7.3"
+kotlinxCoroutines = "1.10.2"
+ktor = "3.2.3"
+koin = "4.1.0"
+atomicfu = "0.29.0"
+arrow = "2.1.2"
+logback = "1.5.18"
+mongo = "5.5.1"
+
+[libraries]
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
+kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinxCoroutinesReactive = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive", version.ref = "kotlinxCoroutines"}
+
+#Ktor
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor"}
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor"}
+ktor-server-contentNegotiation = {module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor"}
+ktor-serialization-kotlinx-json = {module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor"}
+logback-classic = {module = "ch.qos.logback:logback-classic", version.ref = "logback"}
+
+#Database
+mongodb-driver-reactivestreams = {module = "org.mongodb:mongodb-driver-reactivestreams", version.ref = "mongo"}
+mongodb-driver-kotlin-extensions = {module = "org.mongodb:mongodb-driver-kotlin-extensions", version.ref = "mongo"}
+mongodb-driver-kotlin-coroutine = {module = "org.mongodb:mongodb-driver-kotlin-coroutine", version.ref = "mongo"}
+mongodb-bson-kotlinx = {module = "org.mongodb:bson-kotlinx", version.ref = "mongo"}
+
+#Koin
+koin-core = {module = "io.insert-koin:koin-core", version.ref = "koin"}
+koin-ktor = {module = "io.insert-koin:koin-ktor", version.ref = "koin"}
+koin-logger-slf4j ={module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin"}
+
+#Arrow
+arrow-core = {module = "io.arrow-kt:arrow-core", version.ref = "arrow"}
+arrow-fx-coroutines = {module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow"}
+
+
+[bundles]
+kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
+
+[plugins]
+kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+atomicfu = {id = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu"}
