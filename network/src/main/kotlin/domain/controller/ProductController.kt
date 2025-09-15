@@ -53,8 +53,6 @@ class ProductController(private val service: ProductService) {
                 )
             }
 
-
-
             delete("{id}") {
                 val id = call.parameters["id"] ?: return@delete call.respondText(
                     "Missing id", status = HttpStatusCode.BadRequest

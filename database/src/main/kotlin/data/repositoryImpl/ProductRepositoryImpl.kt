@@ -30,19 +30,16 @@ class ProductRepositoryImpl(
     override suspend fun createProduct(product: Product): Either<Throwable, Unit> =
         Either.catch {
             collection.insertOne(product).awaitSingle()
-            Unit
         }
 
     override suspend fun updateProduct(product: Product): Either<Throwable, Unit> =
         Either.catch {
             requireNotNull(product.id) { "Product ID must not be null for update" }
             collection.replaceOne(Filters.eq("_id", product.id), product).awaitSingle()
-            Unit
         }
 
     override suspend fun deleteProductById(id: String): Either<Throwable, Unit> =
         Either.catch {
             collection.deleteOne(Filters.eq("_id", id)).awaitSingle()
-            Unit
         }
 }
