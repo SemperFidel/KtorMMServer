@@ -1,6 +1,5 @@
 package data.entity
 
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import org.bson.types.ObjectId
 
