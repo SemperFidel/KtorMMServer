@@ -19,10 +19,16 @@ dependencies {
     implementation(libs.mongodb.driver.kotlin.coroutine)
     implementation(libs.mongodb.bson.kotlinx)
 
-    implementation(libs.h2)
-    implementation(libs.postgresql)
-    implementation(libs.jimmer.core)
-    implementation(libs.jimmer.sql)
+    implementation(libs.r2dbc.postgresql)
+    implementation(libs.exposed.core)
+    implementation(libs.exposed.r2dbc)
+    implementation(libs.exposed.kotlin.datetime)
+
+    implementation(platform(libs.netty.bom))
+    implementation(libs.netty.common)
+    implementation(libs.netty.buffer)
+    implementation(libs.netty.transport)
+    implementation(libs.netty.handler)
 
     implementation(libs.koin.core)
 
@@ -31,6 +37,8 @@ dependencies {
 
     testImplementation(kotlin("test"))
 }
+
+
 
 tasks.test {
     useJUnitPlatform()

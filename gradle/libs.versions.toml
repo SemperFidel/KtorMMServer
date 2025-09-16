@@ -8,9 +8,9 @@ koin = "4.1.0"
 arrow = "2.1.2"
 logback = "1.5.18"
 mongo = "5.5.1"
-h2 = "2.3.232"
-postgresql = "42.7.7"
-jimmer = "0.9.109"
+exposed = "1.0.0-rc-1"
+r2dbcPostgresql = "1.0.7.RELEASE"
+netty = "4.2.6.Final"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -33,10 +33,17 @@ mongodb-driver-kotlin-coroutine = {module = "org.mongodb:mongodb-driver-kotlin-c
 mongodb-bson-kotlinx = {module = "org.mongodb:bson-kotlinx", version.ref = "mongo"}
 
 #Postgres
-postgresql = {module = "org.postgresql:postgresql", version.ref  = "postgresql"}
-h2 = {module = "com.h2database:h2", version.ref = "h2"}
-jimmer-core = {module = "org.babyfish.jimmer:jimmer-core-kotlin", version.ref = "jimmer"}
-jimmer-sql = {module = "org.babyfish.jimmer:jimmer-sql-kotlin", version.ref = "jimmer"}
+r2dbc-postgresql = {module = "org.postgresql:r2dbc-postgresql", version.ref  = "r2dbcPostgresql"}
+exposed-core = {module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed"}
+exposed-r2dbc = {module = "org.jetbrains.exposed:exposed-r2dbc", version.ref ="exposed"}
+exposed-kotlin-datetime = {module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed"}
+
+#Netty
+netty-bom = { module = "io.netty:netty-bom", version.ref = "netty" }
+netty-common = { module = "io.netty:netty-common", version.ref = "netty" }
+netty-buffer = { module = "io.netty:netty-buffer", version.ref = "netty" }
+netty-transport = { module = "io.netty:netty-transport", version.ref = "netty" }
+netty-handler = { module = "io.netty:netty-handler", version.ref = "netty" }
 
 #Koin
 koin-core = {module = "io.insert-koin:koin-core", version.ref = "koin"}
