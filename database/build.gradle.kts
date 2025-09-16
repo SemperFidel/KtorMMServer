@@ -19,6 +19,11 @@ dependencies {
     implementation(libs.mongodb.driver.kotlin.coroutine)
     implementation(libs.mongodb.bson.kotlinx)
 
+    implementation(libs.h2)
+    implementation(libs.postgresql)
+    implementation(libs.jimmer.core)
+    implementation(libs.jimmer.sql)
+
     implementation(libs.koin.core)
 
     implementation(libs.arrow.core)
