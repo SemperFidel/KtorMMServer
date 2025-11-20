@@ -22,6 +22,9 @@ val databaseModule = module {
             }
         )
     }
+}
+
+val repositoryModule = module {
     single<ProductRepository> { ProductRepositoryImpl(get()) }
 }
 

@@ -7,12 +7,13 @@ import io.ktor.http.*
 import kotlinx.coroutines.flow.toList
 import data.entity.ProductDTO
 import domain.service.ProductService
+import io.ktor.server.application.Application
+import org.koin.ktor.ext.get
+import io.ktor.server.routing.get
 
-class ProductController(private val service: ProductService) {
-
-    fun Route.routes() {
+fun Application.productController(service: ProductService = get()) {
+    routing {
         route("/products") {
-
             get {
                 val products = service.getAll().toList()
                 call.respond(products)

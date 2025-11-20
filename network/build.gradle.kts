@@ -15,11 +15,11 @@ dependencies {
     implementation(libs.kotlinxCoroutinesReactive)
 
     implementation(libs.ktor.server.core)
-    implementation(libs.ktor.server.netty)
 
     implementation(libs.mongodb.bson.kotlinx)
 
     implementation(libs.koin.core)
+    implementation(libs.koin.ktor)
 
     implementation(libs.arrow.core)
     implementation(libs.arrow.fx.coroutines)
